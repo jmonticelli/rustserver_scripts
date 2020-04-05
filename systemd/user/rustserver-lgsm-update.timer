@@ -1,0 +1,9 @@
+[Unit]
+Description=rustserver lgsm-update timer
+
+[Timer]
+OnUnitActiveSec=5m
+OnBootSec=10s
+
+[Install]
+WantedBy=timers.target

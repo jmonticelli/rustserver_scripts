@@ -1,0 +1,11 @@
+[Unit]
+Description=rustserver LGSM update service
+After=network-online.target
+Wants=network-online.target
+Requires=dbus.socket
+
+[Service]
+Type=oneshot
+WorkingDirectory=%h
+ExecStart=%h/rustserver update-lgsm
+Restart=no

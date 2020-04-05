@@ -1,0 +1,11 @@
+[Unit]
+Description=rustserver monitor timer
+After=rustserver.service
+
+[Timer]
+# this shouldn't be executed again really, monitor should just stay up...
+OnUnitActiveSec=2m
+OnBootSec=10s
+
+[Install]
+WantedBy=timers.target

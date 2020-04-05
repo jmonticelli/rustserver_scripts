@@ -1,0 +1,13 @@
+[Unit]
+Description=rustserver monitor service
+After=rustserver.service
+After=network-online.target
+Wants=network-online.target
+Requires=dbus.socket
+Requires=rustserver.service
+
+[Service]
+Type=simple
+WorkingDirectory=%h
+ExecStart=%h/rustserver monitor
+Restart=no
