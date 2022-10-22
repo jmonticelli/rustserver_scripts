@@ -2,12 +2,14 @@
 Description=rustserver monitor service
 After=rustserver.service
 After=network-online.target
+After=tmux-master.service
 Wants=network-online.target
 Requires=dbus.socket
 Requires=rustserver.service
+Requires=tmux-master.service
 
 [Service]
-Type=simple
+Type=oneshot
 WorkingDirectory=%h
 ExecStart=%h/rustserver monitor
 Restart=no
